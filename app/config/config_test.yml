@@ -14,3 +14,7 @@ web_profiler:
 
 swiftmailer:
     disable_delivery: true
+
+# DB
+# name  heroku_e9bd99e9fe1f59a
+# host  eu-mm-auto-dub-01-a.cleardb.net
