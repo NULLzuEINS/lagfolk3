@@ -3,5 +3,8 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
     <mapping directory="$USER_HOME$/Test/docker-lnmp" vcs="Git" />
+    <mapping directory="$USER_HOME$/Test/docker-symfony" vcs="Git" />
+    <mapping directory="$USER_HOME$/Test/ds" vcs="Git" />
+    <mapping directory="$USER_HOME$/Test/symfony-docker-example" vcs="Git" />
   </component>
 </project>
