@@ -1,0 +1,47 @@
+AppBundle\Entity\User:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\UserRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        type:
+            type: string
+            length: '16'
+        name:
+            type: string
+            length: 255
+        nameUrl:
+            type: string
+            length: 255
+            column: name_url
+        password:
+            type: string
+            length: 255
+        descriptionShort:
+            type: text
+            column: description_short
+        descriptionLong:
+            type: text
+            column: description_long
+        image:
+            type: string
+            length: 255
+        contact:
+            type: string
+            length: 255
+        contactEmail:
+            type: string
+            length: 255
+            column: contact_email
+        createdAt:
+            type: datetime
+            column: created_at
+        updatedAt:
+            type: datetime
+            column: updated_at
+    lifecycleCallbacks: {  }

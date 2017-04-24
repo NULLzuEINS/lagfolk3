@@ -2,6 +2,7 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../lagfolk" vcs="Git" />
     <mapping directory="$USER_HOME$/Test/docker-lnmp" vcs="Git" />
     <mapping directory="$USER_HOME$/Test/docker-symfony" vcs="Git" />
     <mapping directory="$USER_HOME$/Test/ds" vcs="Git" />
