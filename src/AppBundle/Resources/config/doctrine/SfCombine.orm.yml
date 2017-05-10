@@ -1,0 +1,22 @@
+AppBundle\Entity\SfCombine:
+    type: entity
+    table: sf_combine
+    id:
+        assetsKey:
+            type: string
+            nullable: false
+            length: 32
+            options:
+                fixed: false
+            id: true
+            column: assets_key
+            generator:
+                strategy: IDENTITY
+    fields:
+        files:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+    lifecycleCallbacks: {  }

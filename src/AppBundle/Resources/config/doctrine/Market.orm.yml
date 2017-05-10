@@ -1,6 +1,6 @@
-AppBundle\Entity\User:
+AppBundle\Entity\Market:
     type: entity
-    table: user
+    table: market
     id:
         id:
             type: integer
@@ -11,70 +11,55 @@ AppBundle\Entity\User:
             generator:
                 strategy: IDENTITY
     fields:
-        type:
+        title:
             type: string
             nullable: false
-            length: 16
+            length: 100
             options:
                 fixed: false
-        name:
-            type: string
-            nullable: false
-            length: 255
-            options:
-                fixed: false
-        nameUrl:
-            type: string
-            nullable: false
-            length: 255
-            options:
-                fixed: false
-            column: name_url
-        password:
-            type: string
-            nullable: false
-            length: 255
-            options:
-                fixed: false
-        descriptionShort:
+        contentShort:
             type: text
             nullable: false
-            length: null
+            length: 65535
             options:
                 fixed: false
-            column: description_short
-        descriptionLong:
+            column: content_short
+        contentLong:
             type: text
-            nullable: false
-            length: null
+            nullable: true
+            length: 65535
             options:
                 fixed: false
-            column: description_long
+            column: content_long
         image:
             type: string
-            nullable: false
+            nullable: true
             length: 255
             options:
                 fixed: false
-        contact:
+        file:
             type: string
-            nullable: false
-            length: 255
+            nullable: true
+            length: 100
             options:
                 fixed: false
-        contactEmail:
+        fileDescription:
             type: string
-            nullable: false
+            nullable: true
             length: 255
             options:
                 fixed: false
-            column: contact_email
+            column: file_description
+        expiresAt:
+            type: datetime
+            nullable: true
+            column: expires_at
         createdAt:
             type: datetime
-            nullable: false
+            nullable: true
             column: created_at
         updatedAt:
             type: datetime
-            nullable: false
+            nullable: true
             column: updated_at
     lifecycleCallbacks: {  }

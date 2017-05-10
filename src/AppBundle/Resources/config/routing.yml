@@ -1,0 +1,4 @@
+app_genre:
+    resource: "@AppBundle/Resources/config/routing/genre.yml"
+    prefix:   /genre
+

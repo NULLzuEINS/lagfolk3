@@ -1,0 +1,58 @@
+AppBundle\Entity\Weekly:
+    type: entity
+    table: weekly
+    indexes:
+        weekly_FI_1:
+            columns:
+                - member_id
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        memberId:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+            column: member_id
+        location:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+        description:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+        url:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+        weekday:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+        time:
+            type: time
+            nullable: false
+        createdAt:
+            type: datetime
+            nullable: true
+            column: created_at
+        updatedAt:
+            type: datetime
+            nullable: true
+            column: updated_at
+    lifecycleCallbacks: {  }

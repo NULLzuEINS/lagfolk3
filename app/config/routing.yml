@@ -1,3 +1,22 @@
-app:
-    resource: "@AppBundle/Controller/"
+app_weekly:
+    resource: "@AppBundle/Controller/WeeklyController.php"
     type:     annotation
+
+app_member:
+    resource: "@AppBundle/Controller/MemberController.php"
+    type:     annotation
+
+app_market:
+    resource: "@AppBundle/Controller/MarketController.php"
+    type:     annotation
+
+app_folkpost:
+    resource: "@AppBundle/Controller/FolkpostController.php"
+    type:     annotation
+
+app_concert:
+    resource: "@AppBundle/Controller/ConcertController.php"
+    type:     annotation
+
+app:
+    resource: "@AppBundle/Resources/config/routing.yml"

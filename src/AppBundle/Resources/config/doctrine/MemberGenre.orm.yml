@@ -1,0 +1,41 @@
+AppBundle\Entity\MemberGenre:
+    type: entity
+    table: member_genre
+    indexes:
+        member_genre_FI_1:
+            columns:
+                - member_id
+        member_genre_FI_2:
+            columns:
+                - genre_id
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+        memberId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: member_id
+        genreId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: genre_id
+    fields:
+        createdAt:
+            type: datetime
+            nullable: true
+            column: created_at
+        updatedAt:
+            type: datetime
+            nullable: true
+            column: updated_at
+    lifecycleCallbacks: {  }

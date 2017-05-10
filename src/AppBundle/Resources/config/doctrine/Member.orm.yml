@@ -1,0 +1,147 @@
+AppBundle\Entity\Member:
+    type: entity
+    table: member
+    uniqueConstraints:
+        index_name:
+            columns:
+                - name
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        typ:
+            type: string
+            nullable: false
+            length: 10
+            options:
+                fixed: false
+        name:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+        nameUrl:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: name_url
+        password:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+        descriptionShort:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: description_short
+        descriptionLong:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+            column: description_long
+        descriptionMember:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+            column: description_member
+        image:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+        kontakt:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+        kontaktEmail:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+            column: kontakt_email
+        urlMyspace:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+            column: url_myspace
+        urlFlickr:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+            column: url_flickr
+        urlPurevolume:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+            column: url_purevolume
+        urlLastfm:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+            column: url_lastfm
+        urlYoutube:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+            column: url_youtube
+        urlWebsite:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+            column: url_website
+        urlSkype:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+            column: url_skype
+        urlIcq:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+            column: url_icq
+        createdAt:
+            type: datetime
+            nullable: true
+            column: created_at
+        updatedAt:
+            type: datetime
+            nullable: true
+            column: updated_at
+    lifecycleCallbacks: {  }
