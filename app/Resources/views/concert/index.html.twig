@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Concert list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Memberid</th>
+                <th>City</th>
+                <th>Description</th>
+                <th>Url</th>
+                <th>Datetime</th>
+                <th>Createdat</th>
+                <th>Updatedat</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for concert in concerts %}
+            <tr>
+                <td><a href="{{ path('concert_show', { 'id': concert.id }) }}">{{ concert.id }}</a></td>
+                <td>{{ concert.memberId }}</td>
+                <td>{{ concert.city }}</td>
+                <td>{{ concert.description }}</td>
+                <td>{{ concert.url }}</td>
+                <td>{% if concert.datetime %}{{ concert.datetime|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if concert.createdAt %}{{ concert.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if concert.updatedAt %}{{ concert.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('concert_show', { 'id': concert.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('concert_edit', { 'id': concert.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('concert_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

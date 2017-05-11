@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Weekly list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Memberid</th>
+                <th>Location</th>
+                <th>Description</th>
+                <th>Url</th>
+                <th>Weekday</th>
+                <th>Time</th>
+                <th>Createdat</th>
+                <th>Updatedat</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for weekly in weeklies %}
+            <tr>
+                <td><a href="{{ path('weekly_show', { 'id': weekly.id }) }}">{{ weekly.id }}</a></td>
+                <td>{{ weekly.memberId }}</td>
+                <td>{{ weekly.location }}</td>
+                <td>{{ weekly.description }}</td>
+                <td>{{ weekly.url }}</td>
+                <td>{{ weekly.weekday }}</td>
+                <td>{% if weekly.time %}{{ weekly.time|date('H:i:s') }}{% endif %}</td>
+                <td>{% if weekly.createdAt %}{{ weekly.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if weekly.updatedAt %}{{ weekly.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('weekly_show', { 'id': weekly.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('weekly_edit', { 'id': weekly.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('weekly_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

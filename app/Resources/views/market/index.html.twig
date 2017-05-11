@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Market list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Contentshort</th>
+                <th>Contentlong</th>
+                <th>Image</th>
+                <th>File</th>
+                <th>Filedescription</th>
+                <th>Expiresat</th>
+                <th>Createdat</th>
+                <th>Updatedat</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for market in markets %}
+            <tr>
+                <td><a href="{{ path('market_show', { 'id': market.id }) }}">{{ market.id }}</a></td>
+                <td>{{ market.title }}</td>
+                <td>{{ market.contentShort }}</td>
+                <td>{{ market.contentLong }}</td>
+                <td>{{ market.image }}</td>
+                <td>{{ market.file }}</td>
+                <td>{{ market.fileDescription }}</td>
+                <td>{% if market.expiresAt %}{{ market.expiresAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if market.createdAt %}{{ market.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if market.updatedAt %}{{ market.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('market_show', { 'id': market.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('market_edit', { 'id': market.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('market_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

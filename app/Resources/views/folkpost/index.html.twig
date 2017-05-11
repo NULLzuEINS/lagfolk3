@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Folkpost list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Image</th>
+                <th>Pdf</th>
+                <th>Releaseat</th>
+                <th>Createdat</th>
+                <th>Updatedat</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for folkpost in folkposts %}
+            <tr>
+                <td><a href="{{ path('folkpost_show', { 'id': folkpost.id }) }}">{{ folkpost.id }}</a></td>
+                <td>{{ folkpost.image }}</td>
+                <td>{{ folkpost.pdf }}</td>
+                <td>{% if folkpost.releaseAt %}{{ folkpost.releaseAt|date('Y-m-d') }}{% endif %}</td>
+                <td>{% if folkpost.createdAt %}{{ folkpost.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if folkpost.updatedAt %}{{ folkpost.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('folkpost_show', { 'id': folkpost.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('folkpost_edit', { 'id': folkpost.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('folkpost_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

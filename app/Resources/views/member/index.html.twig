@@ -1,0 +1,77 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Member list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Typ</th>
+                <th>Name</th>
+                <th>Nameurl</th>
+                <th>Password</th>
+                <th>Descriptionshort</th>
+                <th>Descriptionlong</th>
+                <th>Descriptionmember</th>
+                <th>Image</th>
+                <th>Kontakt</th>
+                <th>Kontaktemail</th>
+                <th>Urlmyspace</th>
+                <th>Urlflickr</th>
+                <th>Urlpurevolume</th>
+                <th>Urllastfm</th>
+                <th>Urlyoutube</th>
+                <th>Urlwebsite</th>
+                <th>Urlskype</th>
+                <th>Urlicq</th>
+                <th>Createdat</th>
+                <th>Updatedat</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for member in members %}
+            <tr>
+                <td><a href="{{ path('member_show', { 'id': member.id }) }}">{{ member.id }}</a></td>
+                <td>{{ member.typ }}</td>
+                <td>{{ member.name }}</td>
+                <td>{{ member.nameUrl }}</td>
+                <td>{{ member.password }}</td>
+                <td>{{ member.descriptionShort }}</td>
+                <td>{{ member.descriptionLong }}</td>
+                <td>{{ member.descriptionMember }}</td>
+                <td>{{ member.image }}</td>
+                <td>{{ member.kontakt }}</td>
+                <td>{{ member.kontaktEmail }}</td>
+                <td>{{ member.urlMyspace }}</td>
+                <td>{{ member.urlFlickr }}</td>
+                <td>{{ member.urlPurevolume }}</td>
+                <td>{{ member.urlLastfm }}</td>
+                <td>{{ member.urlYoutube }}</td>
+                <td>{{ member.urlWebsite }}</td>
+                <td>{{ member.urlSkype }}</td>
+                <td>{{ member.urlIcq }}</td>
+                <td>{% if member.createdAt %}{{ member.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if member.updatedAt %}{{ member.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('member_show', { 'id': member.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('member_edit', { 'id': member.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('member_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Weekly</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ weekly.id }}</td>
+            </tr>
+            <tr>
+                <th>Memberid</th>
+                <td>{{ weekly.memberId }}</td>
+            </tr>
+            <tr>
+                <th>Location</th>
+                <td>{{ weekly.location }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ weekly.description }}</td>
+            </tr>
+            <tr>
+                <th>Url</th>
+                <td>{{ weekly.url }}</td>
+            </tr>
+            <tr>
+                <th>Weekday</th>
+                <td>{{ weekly.weekday }}</td>
+            </tr>
+            <tr>
+                <th>Time</th>
+                <td>{% if weekly.time %}{{ weekly.time|date('H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Createdat</th>
+                <td>{% if weekly.createdAt %}{{ weekly.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Updatedat</th>
+                <td>{% if weekly.updatedAt %}{{ weekly.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('weekly_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('weekly_edit', { 'id': weekly.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
