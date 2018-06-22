@@ -1,6 +1,8 @@
 LAGFolk Symfony 3
 =================
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/vergissberlin/lagfolk3.svg)](https://greenkeeper.io/)
+
 Welcome to the LAG Folk repository. It's made with love and Symfony 3.
 
 ## What's inside?
